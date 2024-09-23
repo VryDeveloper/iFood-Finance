@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - iFood Finance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style-relatorios.css">
+    <link rel="icon" type="image/png" href="../assets/icon.jpeg">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="/index.html">
+                <img src="../assets/ifoodlogo.png" alt="iFood Logo" class="navbar-logo">
+                <span class="ms-2">Olá, Victor. ✌️</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/translacoes.html">Transações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/pagamentos.html">Pagamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/relatorio.html">Relatórios</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Coluna Principal de Relatórios -->
+            <div class="col-md-8">
+                <h2>Relatórios Financeiros</h2>
+
+                <!-- Filtros de Relatórios -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" placeholder="Data de Início">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" placeholder="Data de Fim">
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                            <option selected>Tipo de Relatório</option>
+                            <option value="1">Resumo Financeiro</option>
+                            <option value="2">Transações</option>
+                            <option value="3">Pagamentos</option>
+                            <option value="4">Receitas e Despesas</option>
+                            <option value="5">Aberturas e Fechamentos</option>
+                            <option value="6">Funcionários</option>
+                            <option value="7">Manutenções</option>
+                            <option value="8">Impostos</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 d-grid">
+                        <button class="btn btn-primary">Gerar Relatório</button>
+                    </div>
+                </div>
+
+                <!-- Tabela de Relatórios -->
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Categoria</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Exemplos de Registros de Relatórios -->
+                            <tr>
+                                <td>2024-09-15</td>
+                                <td>Imposto sobre Serviços (ISS)</td>
+                                <td>R$ 1.200,00</td>
+                                <td>Impostos</td>
+                                <td>Concluído</td>
+                            </tr>
+                            <tr>
+                                <td>2024-09-14</td>
+                                <td>Manutenção de Equipamento</td>
+                                <td>R$ 500,00</td>
+                                <td>Manutenções</td>
+                                <td>Concluído</td>
+                            </tr>
+                            <tr>
+                                <td>2024-09-13</td>
+                                <td>Salário Funcionário #001</td>
+                                <td>R$ 3.000,00</td>
+                                <td>Funcionários</td>
+                                <td>Pendente</td>
+                            </tr>
+                            <tr>
+                                <td>2024-09-12</td>
+                                <td>Abertura de Loja</td>
+                                <td>R$ 10.000,00</td>
+                                <td>Aberturas e Fechamentos</td>
+                                <td>Concluído</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <h4>Gráfico de Despesas e Receitas Mensais</h4>
+                        <canvas id="financeChart"></canvas>
+                    </div>
+                </div>
+                
+
+                <!-- Botão para Exportar Relatório -->
+                <div class="d-grid mt-3">
+                    <button class="btn btn-success">Exportar para PDF</button>
+                </div>
+            </div>
+
+            <!-- Coluna Lateral para Produtos Mais Vendidos e Imagem da Fachada -->
+            <div class="col-md-4">
+                <h4>Produtos Mais Vendidos em: <strong>Junho</strong></h4>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Pizza
+                        <span class="badge bg-success">350 vendas</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Hambúrguer
+                        <span class="badge bg-success">231 vendas</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Sushi
+                        <span class="badge bg-success">127 vendas</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Salada
+                        <span class="badge bg-success">78 vendas</span>
+                    </li>
+                </ul>
+                
+                
+                <!-- Imagem da Fachada -->
+                <div class="mb-4">
+                    <h4>Restaurante: Restaurant Victor</h4>
+                    <img src="/assets/fachada.png" alt="Fachada da Loja" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer class="footer mt-auto">
+        <div class="container">
+            <p>@Challenge iFood 2024 FIAP. Victor Augusto.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('financeChart').getContext('2d');
+        const financeChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                datasets: [{
+                    label: 'Receitas',
+                    data: [12000, 15000, 14000, 18000, 22000, 25000, 20000, 18000, 20000, 18000, 15000, 25000],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2
+                }, {
+                    label: 'Despesas',
+                    data: [8000, 9000, 10000, 11000, 13000, 15000, 17000, 16000, 15000, 17000, 13000, 14000],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>
